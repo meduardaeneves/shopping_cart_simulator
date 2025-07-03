@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href='css/styles.css'> 
+</head>
+<body>
+    <!-- <h1>STORE CART SIMULATOR</h1> -->
+    <div id='shopping-cart-area'>
+        <div id="store-area">
+            <p>YOUR SHOPPING CART</p>
+            <!-- <p>STORE ITEMS</p> -->
+            <div id="store-items-area">
+                <table id="table">
+                    <thead id='table-head'>
+                        <tr>
+                        <th class="id-table-head">ID</th>
+                        <th class="product-table-head">PRODUCT</th>
+                        <th class="unit-table-head">UNIT $</th>
+                        <th id='qnt-table-head'>QUANTITY</th>
+                        <th class="subtotal-table-head">TOTAL $</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+        <!-- INÍCIO TEMPLATE -->
+         <!-- Como a TASK não vem no DEFAULT, vamos adicionar a ela a classe hide -->
+                        <tr class="item-line-table hide">
+                        <td class="borda-direita id-value">0000</td>
+                        <td class="borda-direita product-value">Camiseta branca</td>
+                        <td class="borda-direita price-value">20</td>
+                        <td class="borda-direita qnt-value" class='qnt_btns'>
+                            <div class="qnt-value-div">
+                                <button class="qnt-value-div-minus">-</button>
+                                <p class='qnt-value-div-total'>100</p>
+                                <button class="qnt-value-div-plus">+</button>
+                            </div>
+                        </td>
+                        <td class="subtotal-value">1000.00</td>
+                        </tr>
+                <!-- FIM DO TEMPLATE -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="cart-total-area">
+            <!-- <p>SHOPPING CART</p> -->
+            <div id="total-items-area">
+                <div id='total-qnt'>
+                    <p>Total Items</p>
+                    <p id='total-qnt-value'>0</p>
+                </div>
+                <div id='total-amount'>
+                    <p>Total amount</p>
+                    <p id='total-amount-value'>$ 0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div id='manager-area'>
+            <p>MANAGER AREA</p>
+                <div id='btn-new-item-area'>
+                    <button id='btn-new-item'>Add new item to store</button>
+                </div>            
+            <!-- <div id='final-new-item-area'> -->
+            <div id='final-new-item-area' class='hide'>
+                <div id='new-item-config'>
+                    <div id='new-input-block'>
+                        <input type='text' placeholder='Item ID' id='new-item-id-input'>
+                        <input type='text' placeholder='Item name' id='new-item-name-input'>
+                        <input type='text' placeholder='Item price $' id='new-item-price-input'>    
+                    </div>
+                    <div id='new-btn-validate'>
+                        <button id='btn-new-item-validate'>Validate new item</button>    
+                    </div>                
+                
+                </div>
+                <p id='manage-output-results'>NEW ITEM INSERTION REUSULT :</p>
+                <p id='output-final-results'>No new item was added</p>                
+            </div>
+
+        </div>
+    </div>
+    <script src='js/scripts.js' defer></script>
+</body>
+</html>
