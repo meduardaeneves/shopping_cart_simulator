@@ -1,1 +1,1 @@
-# shopping_cart_simulator
+# Shopping Cart Simulator
