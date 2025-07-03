@@ -1,6 +1,6 @@
 # Shopping Cart Simulator
 <p align="center">
-  <img src="shopping_cart_logo.png" width="800">
+  <img src="shopping_cart_logo.png" width="900">
 </p>
 
 <p>Project developed to act as a Shopping Cart Simulator<br>
