@@ -67,14 +67,14 @@ class StoreCart {
         let valuePrice = Number(idprice)
         
         let newElement = {}
-        if (!isNaN(valueNum) && !(this.idList.includes(valueNum)) && (idText != '')) {
+        if (!isNaN(valueNum) && !(this.idList.includes(valueNum)) && (idText != '') && valueNum > 0) {
             newElement['id'] = valueNum
         } else {
             managerTextArea.innerText = `Insert a valid ID`
             return
         }
 
-        if (idname == '') {
+        if (idname == '' || !isNaN(Number(idname))) {
             managerTextArea.innerText = `Insert a valid name for the product`
             return
         } else {
@@ -82,7 +82,7 @@ class StoreCart {
             newElement['qty'] = 0 
         }
         
-        if (!isNaN(valuePrice) && (idprice != '')) {
+        if (!isNaN(valuePrice) && (idprice != '') && (valuePrice > 0)) {
             newElement['unit'] = valuePrice
         } else {
             managerTextArea.innerText = `Insert a valid price for the item`
