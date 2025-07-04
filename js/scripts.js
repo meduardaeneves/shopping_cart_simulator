@@ -190,6 +190,20 @@ class StoreCart {
             this.addNewItem(item)
         }
     }
+
+    updateClassByScroll() {
+        const wrapper = document.getElementById('page-wrapper');
+        const scrollHeight = document.documentElement.scrollHeight;
+        const bodyHeight = window.innerHeight;
+
+        if (scrollHeight > bodyHeight) {
+            wrapper.classList.remove('no-scroll');
+            wrapper.classList.add('scroll');
+        } else {
+           wrapper.classList.remove('scroll');
+            wrapper.classList.add('no-scroll'); 
+        }
+    }
 }
 
 // Para que o resize funcione preciso envolver meu código no DOM
@@ -204,8 +218,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let storeCart = new StoreCart(itemsToAdd);
 
     // Atualiza o texto do cabeçalho baseado no tamanho da tela
+    // Atualiza também a disposição do body com base na existência ou não de scroll
     storeCart.updateTableHeadText();
+    storeCart.updateClassByScroll();
     window.addEventListener("resize", storeCart.updateTableHeadText.bind(storeCart));
+    window.addEventListener("resize", storeCart.updateClassByScroll.bind(storeCart));
 
     // Inicializa a tabela com os itens
     storeCart.inicializeTable();
